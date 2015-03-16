@@ -29,5 +29,5 @@ int deviceCount = response.getValueAsInteger("NewTotalAssociations");
 For more examples see: [The Example Folder](https://github.com/mirthas/FritzTR064/tree/master/examples)
 
 ## Resorces
-* [AVM API Description](http://avm.de/service/schnittstellen/)
+* [AVM API Description](http://avm.de/service/schnittstellen/) (German)
 * [Examples](https://github.com/mirthas/FritzTR064/tree/master/examples)
