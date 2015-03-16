@@ -13,13 +13,14 @@ This library depends on:
 Get all the posibel Actions:
 
 ```java
-FritzConnection fcWithoutUser = new FritzConnection("192.168.1.1","<username>","<password>");
-fcWithoutUser.init();
-fcWithoutUser.printInfo();
+FritzConnection fc = new FritzConnection("192.168.1.1","<username>","<password>");
+fc.init();
+fc.printInfo();
 ```
 The next Example shows how you can get the number of connected Wlan Devices:
 ```java
-FritzConnection fcWithoutUser = new FritzConnection("192.168.1.1","<username>","<password>");
+FritzConnection fc = new FritzConnection("192.168.1.1","<username>","<password>");
+fc.init();
 Service service = fc.getService("WLANConfiguration:1");
 Action action = service.getAction("GetTotalAssociations");
 Response response = action.execute();
