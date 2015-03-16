@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Fritztr064 by mirthas</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Fritztr064</h1>
+        <p>Java API for the Fritzbox TR-064 protokoll</p>
+
+        <p class="view"><a href="https://github.com/mirthas/FritzTR064">View the Project on GitHub <small>mirthas/FritzTR064</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mirthas/FritzTR064/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mirthas/FritzTR064/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mirthas/FritzTR064">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="fritztr064" class="anchor" href="#fritztr064" aria-hidden="true"><span class="octicon octicon-link"></span></a>FritzTR064</h1>
+
+<p>Java-library to communicate with the AVM FritzBox by using the TR-064 protocol.</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>This library depends on:</p>
+
+<ul>
+<li><a href="https://hc.apache.org/httpcomponents-client-4.4.x/logging.html">HttpClient 4.x</a></li>
+</ul>
+
+<h2>
+<a id="quickstart" class="anchor" href="#quickstart" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quickstart</h2>
+
+<p>Get all the posibel Actions:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-stj">FritzConnection</span> fc <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-stj">FritzConnection</span>(<span class="pl-s1"><span class="pl-pds">"</span>192.168.1.1<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>&lt;username&gt;<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>&lt;password&gt;<span class="pl-pds">"</span></span>);
+fc<span class="pl-k">.</span>init();
+fc<span class="pl-k">.</span>printInfo();</pre></div>
+
+<p>The next Example shows how you can get the number of connected Wlan Devices:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-stj">FritzConnection</span> fc <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-stj">FritzConnection</span>(<span class="pl-s1"><span class="pl-pds">"</span>192.168.1.1<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>&lt;username&gt;<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>&lt;password&gt;<span class="pl-pds">"</span></span>);
+fc<span class="pl-k">.</span>init();
+<span class="pl-stj">Service</span> service <span class="pl-k">=</span> fc<span class="pl-k">.</span>getService(<span class="pl-s1"><span class="pl-pds">"</span>WLANConfiguration:1<span class="pl-pds">"</span></span>);
+<span class="pl-stj">Action</span> action <span class="pl-k">=</span> service<span class="pl-k">.</span>getAction(<span class="pl-s1"><span class="pl-pds">"</span>GetTotalAssociations<span class="pl-pds">"</span></span>);
+<span class="pl-stj">Response</span> response <span class="pl-k">=</span> action<span class="pl-k">.</span>execute();
+<span class="pl-st">int</span> deviceCount <span class="pl-k">=</span> response<span class="pl-k">.</span>getValueAsInteger(<span class="pl-s1"><span class="pl-pds">"</span>NewTotalAssociations<span class="pl-pds">"</span></span>);
+</pre></div>
+
+<p>For more examples see: <a href="https://github.com/mirthas/FritzTR064/tree/master/examples">The Example Folder</a></p>
+
+<h2>
+<a id="resorces" class="anchor" href="#resorces" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resorces</h2>
+
+<ul>
+<li>
+<a href="http://avm.de/service/schnittstellen/">AVM API Description</a> (German)</li>
+<li><a href="https://github.com/mirthas/FritzTR064/tree/master/examples">Examples</a></li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mirthas">mirthas</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
