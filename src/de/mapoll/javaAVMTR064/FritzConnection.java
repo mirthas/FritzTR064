@@ -20,6 +20,9 @@
  ***********************************************************************************************************************/
 package de.mapoll.javaAVMTR064;
 
+
+
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -30,8 +33,13 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+
+
+
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
+import org.apache.http.HttpRequest;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.AuthCache;
@@ -46,6 +54,8 @@ import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.protocol.HttpContext;
+import org.apache.http.util.EntityUtils;
 
 import de.mapoll.javaAVMTR064.beans.DeviceType;
 import de.mapoll.javaAVMTR064.beans.RootType;
@@ -141,13 +151,36 @@ private void getServicesFromDevice(DeviceType device) throws IOException, JAXBEx
 		}
 }
 
+private InputStream httpRequest(HttpHost target, HttpRequest request, HttpContext context) throws IOException{
+	CloseableHttpResponse response = null;
+	byte[] content = null;
+	try {
+		  response = httpClient.execute(target, request, context);
+		  content = EntityUtils.toByteArray(response.getEntity());
+	} catch (IOException e) {
+		throw e;	
+	}
+    finally{
+    	if(response != null){
+    		response.close();
+    		if (response.getStatusLine().getStatusCode()!=200){
+    			throw new IOException(response.getStatusLine().toString());
+    		}
+    	}
+		 
+    }
+	if (content != null)
+		return new ByteArrayInputStream(content);
+	else
+		return new ByteArrayInputStream(new byte[0]);
+}
+
+
+
 protected InputStream getXMLIS(String fileName) throws IOException{
 	  HttpGet httpget = new HttpGet(fileName);
-	  CloseableHttpResponse response = httpClient.execute(targetHost, httpget, context);
-	  if (response.getStatusLine().getStatusCode()!=200){
-		  throw new IOException(response.getStatusLine().toString());
-	  }
-	  return response.getEntity().getContent();
+	  return httpRequest(targetHost, httpget, context);
+	
 }
 
 protected InputStream getSOAPXMLIS(String fileName, String urn, HttpEntity entity) throws IOException{
@@ -156,12 +189,7 @@ protected InputStream getSOAPXMLIS(String fileName, String urn, HttpEntity entit
 	  httppost.addHeader("charset","utf-8");
 	  httppost.addHeader("content-type","text/xml");
 	  httppost.setEntity(entity);
-	  
-	  CloseableHttpResponse response = httpClient.execute(targetHost, httppost, context);
-	  if (response.getStatusLine().getStatusCode()!=200){
-		  throw new IOException(response.getStatusLine().toString());
-	  }
-	  return response.getEntity().getContent();
+	  return httpRequest(targetHost, httppost, context);
 }
 
 
