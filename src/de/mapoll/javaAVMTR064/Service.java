@@ -57,9 +57,8 @@ public class Service {
 			InputStream  is = connection.getXMLIS(serviceXML.getSCPDURL());
 			JAXBContext jaxbContext = JAXBContext.newInstance(ScpdType2.class);
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-			ScpdType2 scpd = (ScpdType2)jaxbUnmarshaller.unmarshal(is);
+                        ScpdType2 scpd = (ScpdType2)jaxbUnmarshaller.unmarshal(is);
 			for (ActionType a : scpd.getActionList().getAction()){
-				
 				actions.put(a.getName(), new Action(a, scpd.getServiceStateTable().getStateVariable(), connection, this.serviceXML));
 			}
 		}
