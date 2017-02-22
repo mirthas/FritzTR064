@@ -62,11 +62,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SpecVersionType }
+     * Create an instance of {@link DeviceSpecVersionType }
      * 
      */
-    public SpecVersionType createSpecVersionType() {
-        return new SpecVersionType();
+    public DeviceSpecVersionType createSpecVersionType() {
+        return new DeviceSpecVersionType();
     }
 
     /**

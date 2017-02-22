@@ -5,6 +5,7 @@
  *
  * Copyright 2015 Marin Pollmann <pollmann.m@gmail.com>
  * 
+ * JAXB annotations fixed by Jan Gretza <j.gretza@anetos.de>
  *
  ***********************************************************************************************************************
  *
@@ -26,11 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für argumentListType complex type.
+ * <p>Java-Klasse fÃ¼r argumentListType complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -54,6 +56,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ArgumentListType {
 
+    @XmlElement(namespace="urn:dslforum-org:service-1-0")
     protected List<ArgumentType> argument;
 
     /**

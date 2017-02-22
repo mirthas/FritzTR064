@@ -5,6 +5,7 @@
  *
  * Copyright 2015 Marin Pollmann <pollmann.m@gmail.com>
  * 
+ * JAXB annotations fixed by Jan Gretza <j.gretza@anetos.de>
  *
  ***********************************************************************************************************************
  *
@@ -29,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für deviceType complex type.
+ * <p>Java-Klasse fÃ¼r deviceType complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -79,32 +80,35 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class DeviceType {
 
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String deviceType;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String friendlyName;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String manufacturer;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     @XmlSchemaType(name = "anyURI")
     protected String manufacturerURL;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String modelDescription;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String modelName;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String modelNumber;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     @XmlSchemaType(name = "anyURI")
     protected String modelURL;
-    @XmlElement(name = "UDN", required = true)
+    @XmlElement(name = "UDN", required = true, namespace="urn:dslforum-org:device-1-0")
     protected String udn;
-    @XmlElement(name = "UPC")
+    @XmlElement(name = "UPC", namespace="urn:dslforum-org:device-1-0")
     protected String upc;
+    @XmlElement(namespace="urn:dslforum-org:device-1-0")
     protected IconListType iconList;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected ServiceListType serviceList;
+    @XmlElement(namespace="urn:dslforum-org:device-1-0")
     protected DeviceListType deviceList;
+    @XmlElement(namespace="urn:dslforum-org:device-1-0")
     @XmlSchemaType(name = "anyURI")
     protected String presentationURL;
 

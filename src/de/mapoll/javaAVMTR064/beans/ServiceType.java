@@ -5,6 +5,7 @@
  *
  * Copyright 2015 Marin Pollmann <pollmann.m@gmail.com>
  * 
+ * JAXB annotations fixed by Jan Gretza <j.gretza@anetos.de>
  *
  ***********************************************************************************************************************
  *
@@ -28,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für serviceType complex type.
+ * <p>Java-Klasse fÃ¼r serviceType complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -60,15 +61,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ServiceType {
 
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String serviceType;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String serviceId;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String controlURL;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String eventSubURL;
-    @XmlElement(name = "SCPDURL", required = true)
+    @XmlElement(name = "SCPDURL", required = true, namespace="urn:dslforum-org:device-1-0")
     protected String scpdurl;
 
     /**

@@ -5,6 +5,7 @@
  *
  * Copyright 2015 Marin Pollmann <pollmann.m@gmail.com>
  * 
+ * JAXB annotations fixed by Jan Gretza <j.gretza@anetos.de>
  *
  ***********************************************************************************************************************
  *
@@ -29,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für actionType complex type.
+ * <p>Java-Klasse fÃ¼r actionType complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -55,8 +56,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ActionType {
 
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:service-1-0")
     protected String name;
+    @XmlElement(namespace="urn:dslforum-org:service-1-0")
     protected ArgumentListType argumentList;
 
     /**

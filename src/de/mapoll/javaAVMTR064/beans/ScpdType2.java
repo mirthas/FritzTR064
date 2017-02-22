@@ -5,6 +5,7 @@
  *
  * Copyright 2015 Marin Pollmann <pollmann.m@gmail.com>
  * 
+ * JAXB annotations fixed by Jan Gretza <j.gretza@anetos.de>
  *
  ***********************************************************************************************************************
  *
@@ -29,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für scpdType complex type.
+ * <p>Java-Klasse fÃ¼r scpdType complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -58,11 +59,11 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ScpdType2 {
 
-    @XmlElement(required = true)
-    protected SpecVersionType specVersion;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:service-1-0")
+    protected ServiceSpecVersionType specVersion;
+    @XmlElement(required = true, namespace="urn:dslforum-org:service-1-0")
     protected ActionListType actionList;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:service-1-0")
     protected ServiceStateTableType serviceStateTable;
 
     /**
@@ -70,10 +71,10 @@ public class ScpdType2 {
      * 
      * @return
      *     possible object is
-     *     {@link SpecVersionType }
+     *     {@link DeviceSpecVersionType }
      *     
      */
-    public SpecVersionType getSpecVersion() {
+    public ServiceSpecVersionType getSpecVersion() {
         return specVersion;
     }
 
@@ -82,10 +83,10 @@ public class ScpdType2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link SpecVersionType }
+     *     {@link DeviceSpecVersionType }
      *     
      */
-    public void setSpecVersion(SpecVersionType value) {
+    public void setSpecVersion(ServiceSpecVersionType value) {
         this.specVersion = value;
     }
 

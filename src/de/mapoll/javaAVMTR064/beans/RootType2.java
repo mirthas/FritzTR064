@@ -5,6 +5,7 @@
  *
  * Copyright 2015 Marin Pollmann <pollmann.m@gmail.com>
  * 
+ * JAXB annotations fixed by Jan Gretza <j.gretza@anetos.de>
  *
  ***********************************************************************************************************************
  *
@@ -29,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für rootType complex type.
+ * <p>Java-Klasse fÃ¼r rootType complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -56,9 +57,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class RootType2 {
 	
-    @XmlElement(required = true)
-    protected SpecVersionType specVersion;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
+    protected DeviceSpecVersionType specVersion;
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected DeviceType device;
 
     /**
@@ -66,10 +67,10 @@ public class RootType2 {
      * 
      * @return
      *     possible object is
-     *     {@link SpecVersionType }
+     *     {@link DeviceSpecVersionType }
      *     
      */
-    public SpecVersionType getSpecVersion() {
+    public DeviceSpecVersionType getSpecVersion() {
         return specVersion;
     }
 
@@ -78,10 +79,10 @@ public class RootType2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link SpecVersionType }
+     *     {@link DeviceSpecVersionType }
      *     
      */
-    public void setSpecVersion(SpecVersionType value) {
+    public void setSpecVersion(DeviceSpecVersionType value) {
         this.specVersion = value;
     }
 

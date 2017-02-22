@@ -5,6 +5,7 @@
  *
  * Copyright 2015 Marin Pollmann <pollmann.m@gmail.com>
  * 
+ * JAXB annotations fixed by Jan Gretza <j.gretza@anetos.de>
  *
  ***********************************************************************************************************************
  *
@@ -28,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für iconType complex type.
+ * <p>Java-Klasse fÃ¼r iconType complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -60,12 +61,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class IconType {
 
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String mimetype;
+    @XmlElement(namespace="urn:dslforum-org:device-1-0")
     protected byte width;
+    @XmlElement(namespace="urn:dslforum-org:device-1-0")
     protected byte height;
+    @XmlElement(namespace="urn:dslforum-org:device-1-0")
     protected byte depth;
-    @XmlElement(required = true)
+    @XmlElement(required = true, namespace="urn:dslforum-org:device-1-0")
     protected String url;
 
     /**
