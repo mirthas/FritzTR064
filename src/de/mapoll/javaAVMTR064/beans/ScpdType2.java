@@ -1,25 +1,29 @@
-/***********************************************************************************************************************
+/**
+ * *********************************************************************************************************************
  *
  * javaAVMTR064 - open source Java TR-064 API
  *===========================================
  *
  * Copyright 2015 Marin Pollmann <pollmann.m@gmail.com>
- * 
+ *
  * JAXB annotations fixed by Jan Gretza <j.gretza@anetos.de>
  *
  ***********************************************************************************************************************
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
- * the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
- * specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  *
- ***********************************************************************************************************************/
-
+ **********************************************************************************************************************
+ */
 package de.mapoll.javaAVMTR064.beans;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -28,12 +32,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java-Klasse für scpdType complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ * <p>
+ * Java-Klasse für scpdType complex type.
+ *
+ * <p>
+ * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser
+ * Klasse enthalten ist.
+ *
  * <pre>
  * &lt;complexType name="scpdType"&gt;
  *   &lt;complexContent&gt;
@@ -47,10 +53,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
-@XmlRootElement(name = "scpd", namespace="urn:schemas-upnp-org:service-1-0")
+@XmlRootElement(name = "scpd", namespace = "urn:schemas-upnp-org:service-1-0")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "scpdType", propOrder = {
     "specVersion",
@@ -59,20 +65,18 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ScpdType2 {
 
-    @XmlElement(required = true, namespace="urn:dslforum-org:service-1-0")
+    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
     protected ServiceSpecVersionType specVersion;
-    @XmlElement(required = true, namespace="urn:dslforum-org:service-1-0")
+    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
     protected ActionListType actionList;
-    @XmlElement(required = true, namespace="urn:dslforum-org:service-1-0")
+    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
     protected ServiceStateTableType serviceStateTable;
 
     /**
      * Ruft den Wert der specVersion-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DeviceSpecVersionType }
-     *     
+     *
+     * @return possible object is {@link DeviceSpecVersionType }
+     *
      */
     public ServiceSpecVersionType getSpecVersion() {
         return specVersion;
@@ -80,11 +84,9 @@ public class ScpdType2 {
 
     /**
      * Legt den Wert der specVersion-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DeviceSpecVersionType }
-     *     
+     *
+     * @param value allowed object is {@link DeviceSpecVersionType }
+     *
      */
     public void setSpecVersion(ServiceSpecVersionType value) {
         this.specVersion = value;
@@ -92,11 +94,9 @@ public class ScpdType2 {
 
     /**
      * Ruft den Wert der actionList-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ActionListType }
-     *     
+     *
+     * @return possible object is {@link ActionListType }
+     *
      */
     public ActionListType getActionList() {
         return actionList;
@@ -104,11 +104,9 @@ public class ScpdType2 {
 
     /**
      * Legt den Wert der actionList-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ActionListType }
-     *     
+     *
+     * @param value allowed object is {@link ActionListType }
+     *
      */
     public void setActionList(ActionListType value) {
         this.actionList = value;
@@ -116,11 +114,9 @@ public class ScpdType2 {
 
     /**
      * Ruft den Wert der serviceStateTable-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ServiceStateTableType }
-     *     
+     *
+     * @return possible object is {@link ServiceStateTableType }
+     *
      */
     public ServiceStateTableType getServiceStateTable() {
         return serviceStateTable;
@@ -128,11 +124,9 @@ public class ScpdType2 {
 
     /**
      * Legt den Wert der serviceStateTable-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ServiceStateTableType }
-     *     
+     *
+     * @param value allowed object is {@link ServiceStateTableType }
+     *
      */
     public void setServiceStateTable(ServiceStateTableType value) {
         this.serviceStateTable = value;
